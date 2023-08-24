@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:studio/application/core/di.dart';
+import 'package:studio/application/core/show_message.dart';
 import 'package:studio/application/preferences/app_preferences.dart';
 import 'package:studio/application/preferences/app_preferences_keys.dart';
 
@@ -16,9 +17,12 @@ class _SettingScreenState extends State<SettingScreen> {
   late bool blur;
   late bool greyScale;
   late bool square;
-  int? height;
-  int? width;
+
+  // int? height;
+  // int? width;
   double blurValue = 1.0;
+  late final TextEditingController _heightController;
+  late final TextEditingController _widthController;
 
   @override
   void initState() {
@@ -75,23 +79,25 @@ class _SettingScreenState extends State<SettingScreen> {
                         height: 4,
                       ),
                       TextField(
-                        decoration: InputDecoration(
+                        controller: _widthController,
+                        decoration: const InputDecoration(
                           isDense: true,
-                          border: const OutlineInputBorder(),
-                          hintText: "${width ?? "$kInitialWidth"}",
+                          border: OutlineInputBorder(),
+                          hintText: "width",
                         ),
-                        onSubmitted: (value) {
-                          final val = int.tryParse(value) ?? kInitialWidth;
-                          if (val <= 5000) {
-                            width = val;
-                            if (square) {
-                              height = val;
-                            }
-                            setState(() {});
-                          }
-                        },
                         textInputAction: TextInputAction.next,
                         keyboardType: TextInputType.number,
+                        onChanged: (value) {
+                          final width = int.tryParse(value) ?? kInitialWidth;
+                          if (width > 5000) {
+                            ShowMessage.show(context,
+                                "width is too much! Enter less than 5000");
+                            _widthController.text = kInitialWidth.toString();
+                          }
+                          if (square) {
+                            _heightController.text = value;
+                          }
+                        },
                       ),
                     ],
                   ),
@@ -111,21 +117,23 @@ class _SettingScreenState extends State<SettingScreen> {
                         height: 4,
                       ),
                       TextField(
+                        controller: _heightController,
                         readOnly: square,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           isDense: true,
-                          border: const OutlineInputBorder(),
-                          hintText: "${height ?? "$kInitialWidth"}",
+                          border: OutlineInputBorder(),
+                          hintText: "height",
                         ),
-                        keyboardType: TextInputType.number,
-                        textInputAction: TextInputAction.done,
-                        onSubmitted: (value) {
-                          final val = int.tryParse(value) ?? kInitialWidth;
-                          if (val <= 5000) {
-                            height = val;
-                            setState(() {});
+                        onChanged: (value) {
+                          final height = int.tryParse(value) ?? kInitialHeight;
+                          if (height > 5000) {
+                            ShowMessage.show(context,
+                                "height is too much! Enter less than 5000");
+                            _heightController.text = kInitialHeight.toString();
                           }
                         },
+                        keyboardType: TextInputType.number,
+                        textInputAction: TextInputAction.done,
                       ),
                     ],
                   ),
@@ -150,7 +158,7 @@ class _SettingScreenState extends State<SettingScreen> {
 
   void onSquareChange(bool? value) {
     square = value ?? false;
-    height = width;
+    _heightController.text = _widthController.text;
     setState(() {});
   }
 
@@ -164,8 +172,10 @@ class _SettingScreenState extends State<SettingScreen> {
     } else {
       blur = false;
     }
-    height = preferences.getInt(AppPreferencesKeys.height);
-    width = preferences.getInt(AppPreferencesKeys.width);
+    int? height = preferences.getInt(AppPreferencesKeys.height);
+    int? width = preferences.getInt(AppPreferencesKeys.width);
+    _heightController = TextEditingController(text: height?.toString());
+    _widthController = TextEditingController(text: width?.toString());
     if (height != null && width != null && height == width) {
       square = true;
     } else {
@@ -193,7 +203,9 @@ class _SettingScreenState extends State<SettingScreen> {
     } else {
       preferences.setDouble(AppPreferencesKeys.blur, 0);
     }
-    preferences.setInt(AppPreferencesKeys.height, height ?? kInitialHeight);
-    preferences.setInt(AppPreferencesKeys.width, width ?? kInitialWidth);
+    preferences.setInt(AppPreferencesKeys.height,
+        int.tryParse(_heightController.text) ?? kInitialHeight);
+    preferences.setInt(AppPreferencesKeys.width,
+        int.tryParse(_widthController.text) ?? kInitialWidth);
   }
 }

@@ -47,6 +47,8 @@ dependencies:
   get_it: ^7.6.0
   dartz: ^0.10.1
   share_plus: ^7.1.0
+  font_awesome_flutter: ^10.5.0
+  path_provider: ^2.1.0
 
 dev_dependencies:
   flutter_test:

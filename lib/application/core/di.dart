@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:studio/application/preferences/app_preferences_impl.dart';
@@ -16,6 +17,7 @@ Future<void> setUpDi() async {
   final AppPreferences appPreferences = AppPreferencesIMPL(sharedPreferences);
   getIt.registerFactory<OnBoardingRepos>(() => onBoardingRepos);
   getIt.registerFactory<AppPreferences>(() => appPreferences);
+  getIt.registerFactory<Dio>(() => Dio());
   getIt.registerFactory<LoadImagesUseCase>(
       () => LoadImagesUseCase(onBoardingRepos));
 }
