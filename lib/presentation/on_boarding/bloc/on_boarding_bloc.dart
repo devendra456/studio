@@ -10,11 +10,9 @@ import 'package:studio/domain/use_cases/load_images_use_case.dart';
 
 import '../../../application/constants.dart';
 
-part 'on_boarding_event.dart';
-
-part 'on_boarding_state.dart';
-
 part 'on_boarding_bloc.freezed.dart';
+part 'on_boarding_event.dart';
+part 'on_boarding_state.dart';
 
 class OnBoardingBloc extends Bloc<OnBoardingEvent, OnBoardingState> {
   final LoadImagesUseCase _loadImagesUseCase;

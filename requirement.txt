@@ -1,8 +1,5 @@
-#dark mode
 #dynamic color
-#copy image url
 #copy image
-#share image
 #compatible for all device
 #UI&UX
 #Local manage

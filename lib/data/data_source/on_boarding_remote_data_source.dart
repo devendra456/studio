@@ -4,7 +4,7 @@ mixin OnBoardingRemoteDataSource {
 
 class OnBoardingRemoteDataSourceImpl implements OnBoardingRemoteDataSource {
   @override
-  Future<List<String>> loadRemoteImages() async{
+  Future<List<String>> loadRemoteImages() async {
     // TODO: implement loadRemoteImages
     throw UnimplementedError();
   }

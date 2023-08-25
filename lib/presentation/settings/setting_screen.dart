@@ -42,7 +42,10 @@ class _SettingScreenState extends State<SettingScreen> {
             value: blur,
             contentPadding: const EdgeInsets.symmetric(horizontal: 20),
             onChanged: onBlurChange,
-            title: const Text("Blur"),
+            title: Text(
+              "Blur",
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
           ),
           if (blur == true)
             Slider(
@@ -55,13 +58,19 @@ class _SettingScreenState extends State<SettingScreen> {
             value: greyScale,
             onChanged: onGreyScaleChange,
             contentPadding: const EdgeInsets.symmetric(horizontal: 20),
-            title: const Text("Greyscale"),
+            title: Text(
+              "Greyscale",
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
           ),
           CheckboxListTile(
             value: square,
             onChanged: onSquareChange,
             contentPadding: const EdgeInsets.symmetric(horizontal: 20),
-            title: const Text("Square"),
+            title: Text(
+              "Square",
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 16),
@@ -73,19 +82,21 @@ class _SettingScreenState extends State<SettingScreen> {
                     children: [
                       Text(
                         "Width",
-                        style: Theme.of(context).textTheme.bodyLarge,
+                        style: Theme.of(context).textTheme.bodyMedium,
                       ),
                       const SizedBox(
                         height: 4,
                       ),
                       TextField(
                         controller: _widthController,
-                        decoration: const InputDecoration(
+                        decoration: InputDecoration(
                           isDense: true,
                           border: OutlineInputBorder(),
                           hintText: "width",
+                          hintStyle: Theme.of(context).textTheme.bodyMedium,
                         ),
                         textInputAction: TextInputAction.next,
+                        style: Theme.of(context).textTheme.bodyMedium,
                         keyboardType: TextInputType.number,
                         onChanged: (value) {
                           final width = int.tryParse(value) ?? kInitialWidth;
@@ -111,7 +122,7 @@ class _SettingScreenState extends State<SettingScreen> {
                     children: [
                       Text(
                         "Height",
-                        style: Theme.of(context).textTheme.bodyLarge,
+                        style: Theme.of(context).textTheme.bodyMedium,
                       ),
                       const SizedBox(
                         height: 4,
@@ -119,11 +130,13 @@ class _SettingScreenState extends State<SettingScreen> {
                       TextField(
                         controller: _heightController,
                         readOnly: square,
-                        decoration: const InputDecoration(
+                        decoration: InputDecoration(
                           isDense: true,
                           border: OutlineInputBorder(),
                           hintText: "height",
+                          hintStyle: Theme.of(context).textTheme.bodyMedium,
                         ),
+                        style: Theme.of(context).textTheme.bodyMedium,
                         onChanged: (value) {
                           final height = int.tryParse(value) ?? kInitialHeight;
                           if (height > 5000) {

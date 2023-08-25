@@ -6,13 +6,12 @@ import 'pretty_dio_logger.dart';
 
 class ApiBaseClient {
   static final BaseOptions _opts = BaseOptions(
-    baseUrl: APIRoutes.baseURL,
-    responseType: ResponseType.json,
-    headers: {
-      "Accept": "application/json",
-    },
-    connectTimeout: const Duration(hours: 1)
-  );
+      baseUrl: APIRoutes.baseURL,
+      responseType: ResponseType.json,
+      headers: {
+        "Accept": "application/json",
+      },
+      connectTimeout: const Duration(hours: 1));
 
   static Dio _createDio() {
     return Dio(_opts);

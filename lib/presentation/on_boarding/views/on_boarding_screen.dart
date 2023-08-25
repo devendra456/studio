@@ -37,7 +37,8 @@ class OnBoardingScreen extends StatelessWidget {
               itemBuilder: (context, item, index) {
                 return InkWell(
                   onTap: () {
-                    Navigator.pushNamed(context, RouteName.imageViewer,arguments: item);
+                    Navigator.pushNamed(context, RouteName.imageViewer,
+                        arguments: item);
                   },
                   child: Hero(
                     tag: item,

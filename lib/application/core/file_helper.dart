@@ -20,7 +20,7 @@ class FileHelper {
       if (fileName == null) throw "File Not Found";
       final path = "${dir.path}/$fileName.jpg";
       final res = await getIt.get<Dio>().download(url, path);
-      print("===========> "+res.data);
+      print("===========> " + res.data);
       return null;
       /*var file = File(path);
       file.openWrite();
