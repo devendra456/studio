@@ -5,3 +5,5 @@
 #share image
 #compatible for all device
 #UI&UX
+#Local manage
+#download image

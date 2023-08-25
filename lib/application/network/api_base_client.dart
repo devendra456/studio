@@ -11,6 +11,7 @@ class ApiBaseClient {
     headers: {
       "Accept": "application/json",
     },
+    connectTimeout: const Duration(hours: 1)
   );
 
   static Dio _createDio() {
