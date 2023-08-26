@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:studio/application/preferences/app_preferences_impl.dart';
@@ -18,6 +19,7 @@ Future<void> setUpDi() async {
   getIt.registerFactory<OnBoardingRepos>(() => onBoardingRepos);
   getIt.registerFactory<AppPreferences>(() => appPreferences);
   getIt.registerFactory<Dio>(() => Dio());
+  getIt.registerFactory<DefaultCacheManager>(() => DefaultCacheManager());
   getIt.registerFactory<LoadImagesUseCase>(
       () => LoadImagesUseCase(onBoardingRepos));
 }

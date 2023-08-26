@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class StudioImageTile extends StatelessWidget {
@@ -11,6 +12,23 @@ class StudioImageTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (kIsWeb) {
+      return Image.network(
+        url,
+        errorBuilder: (context, _, stack) {
+          return const Icon(
+            Icons.image_outlined,
+            color: Colors.grey,
+          );
+        },
+        loadingBuilder: (context, _, stack) {
+          return const Icon(
+            Icons.image_outlined,
+            color: Colors.grey,
+          );
+        },
+      );
+    }
     return CachedNetworkImage(
       imageUrl: url,
       placeholder: (context, _) {

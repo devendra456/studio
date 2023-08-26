@@ -1,6 +1,10 @@
-#dynamic color
 #copy image
-#compatible for all device
+#download image
+#android
+#web
+#ios
+#windows
+#linex
+#macos
 #UI&UX
 #Local manage
-#download image

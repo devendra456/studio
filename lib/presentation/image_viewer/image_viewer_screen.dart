@@ -11,9 +11,13 @@ import 'package:studio/presentation/on_boarding/views/studio_grid_tile.dart';
 class ImageViewerScreen extends StatelessWidget {
   final String url;
 
-  ImageViewerScreen({super.key, required this.url});
+  const ImageViewerScreen({
+    super.key,
+    required this.url,
+    required this.defaultCacheManager,
+  });
 
-  final DefaultCacheManager defaultCacheManager = DefaultCacheManager();
+  final DefaultCacheManager defaultCacheManager;
 
   @override
   Widget build(BuildContext context) {

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_cache_manager/flutter_cache_manager.dart';
+import 'package:studio/application/core/di.dart';
 import 'package:studio/application/routes/route_names.dart';
 import 'package:studio/presentation/image_viewer/image_viewer_screen.dart';
 import 'package:studio/presentation/settings/setting_screen.dart';
@@ -17,7 +19,10 @@ Route? onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (context) {
           final String url = settings.arguments as String;
-          return ImageViewerScreen(url: url);
+          return ImageViewerScreen(
+            url: url,
+            defaultCacheManager: getIt.get<DefaultCacheManager>(),
+          );
         },
       );
     case RouteName.setting:

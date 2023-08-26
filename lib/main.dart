@@ -37,23 +37,28 @@ class MyApp extends StatelessWidget {
             darkTheme: ThemeData(
               colorScheme: lightDynamic,
               useMaterial3: true,
-              scaffoldBackgroundColor: Colors.black,
+              scaffoldBackgroundColor: Colors.black54,
               appBarTheme: const AppBarTheme(
-                backgroundColor: Colors.black,
+                backgroundColor: Colors.black54,
                 foregroundColor: Colors.white,
               ),
               popupMenuTheme: const PopupMenuThemeData(
-                color: Colors.black,
+                color: Colors.black54,
                 shadowColor: Colors.white24,
               ),
               textTheme: const TextTheme(
-                  bodyMedium: TextStyle(color: Colors.white60, fontSize: 16)),
+                bodyMedium: TextStyle(color: Colors.white60, fontSize: 16),
+              ),
             ),
             theme: ThemeData(
               colorScheme: darkDynamic,
               useMaterial3: true,
-              textTheme: const TextTheme(
-                  bodyMedium: TextStyle(color: Colors.black87, fontSize: 16)),
+              textTheme: TextTheme(
+                bodyMedium: TextStyle(
+                  color: darkDynamic == null ? Colors.black87 : Colors.white60,
+                  fontSize: 16,
+                ),
+              ),
             ),
             initialRoute: Navigator.defaultRouteName,
             onGenerateRoute: onGenerateRoute,
