@@ -2,13 +2,17 @@ import 'package:dynamic_color/dynamic_color.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:studio/application/preferences/app_preferences.dart';
 import 'package:studio/domain/use_cases/load_images_use_case.dart';
 import 'package:studio/firebase_options.dart';
 import 'package:studio/presentation/on_boarding/bloc/on_boarding_bloc.dart';
+import 'package:studio/presentation/on_boarding/views/on_boarding_screen.dart';
 
 import 'application/core/di.dart';
-import 'application/routes/route_setting.dart';
+import 'application/routes/route_names.dart';
+import 'presentation/image_viewer/image_viewer_screen.dart';
+import 'presentation/settings/setting_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -65,8 +69,19 @@ class MyApp extends StatelessWidget {
                 ),
               ),
             ),
+            routes: {
+              Navigator.defaultRouteName: (context) => const OnBoardingScreen(),
+              RouteName.imageViewer: (context) {
+                final String url =
+                    ModalRoute.of(context)?.settings.arguments as String;
+                return ImageViewerScreen(
+                  url: url,
+                  defaultCacheManager: getIt.get<DefaultCacheManager>(),
+                );
+              },
+              RouteName.setting: (context) => const SettingScreen(),
+            },
             initialRoute: Navigator.defaultRouteName,
-            onGenerateRoute: onGenerateRoute,
           );
         },
       ),

@@ -9,8 +9,6 @@ import 'package:studio/application/core/show_message.dart';
 import 'package:studio/presentation/on_boarding/views/studio_grid_tile.dart';
 
 class ImageViewerScreen extends StatelessWidget {
-  final String url;
-
   const ImageViewerScreen({
     super.key,
     required this.url,
@@ -18,6 +16,7 @@ class ImageViewerScreen extends StatelessWidget {
   });
 
   final DefaultCacheManager defaultCacheManager;
+  final String url;
 
   @override
   Widget build(BuildContext context) {
