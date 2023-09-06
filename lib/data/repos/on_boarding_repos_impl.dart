@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:flutter/foundation.dart';
 import 'package:studio/application/core/error_handler.dart';
 import 'package:studio/application/network/api_base_client.dart';
 
@@ -7,6 +8,8 @@ import '../../domain/repos/on_boarding_repos.dart';
 import '../../domain/use_cases/load_images_use_case.dart';
 
 class OnBoardingReposImpl implements OnBoardingRepos {
+  int i = 0;
+
   @override
   Future<Either<Failure, List<String>>> getImages(
       LoadImagesParams params) async {
@@ -28,6 +31,9 @@ class OnBoardingReposImpl implements OnBoardingRepos {
       realURI.queryParametersAll.forEach((key, value) {
         url += "$key=${value[0]}&";
       });
+      if (kIsWeb) {
+        url += "${i++}";
+      }
       list.add(url);
       return Right(list);
     } catch (e) {

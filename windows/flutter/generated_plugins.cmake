@@ -5,6 +5,8 @@
 list(APPEND FLUTTER_PLUGIN_LIST
   connectivity_plus
   dynamic_color
+  file_selector_windows
+  firebase_core
   pasteboard
   share_plus
   url_launcher_windows

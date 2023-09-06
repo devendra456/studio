@@ -1,8 +1,10 @@
 import 'package:dynamic_color/dynamic_color.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:studio/application/preferences/app_preferences.dart';
 import 'package:studio/domain/use_cases/load_images_use_case.dart';
+import 'package:studio/firebase_options.dart';
 import 'package:studio/presentation/on_boarding/bloc/on_boarding_bloc.dart';
 
 import 'application/core/di.dart';
@@ -10,6 +12,9 @@ import 'application/routes/route_setting.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   await setUpDi();
   runApp(const MyApp());
 }
@@ -37,17 +42,17 @@ class MyApp extends StatelessWidget {
             darkTheme: ThemeData(
               colorScheme: lightDynamic,
               useMaterial3: true,
-              scaffoldBackgroundColor: Colors.black54,
+              scaffoldBackgroundColor: Colors.black,
               appBarTheme: const AppBarTheme(
-                backgroundColor: Colors.black54,
+                backgroundColor: Colors.black,
                 foregroundColor: Colors.white,
               ),
               popupMenuTheme: const PopupMenuThemeData(
-                color: Colors.black54,
-                shadowColor: Colors.white24,
+                color: Colors.black,
+                shadowColor: Colors.grey,
               ),
               textTheme: const TextTheme(
-                bodyMedium: TextStyle(color: Colors.white60, fontSize: 16),
+                bodyMedium: TextStyle(color: Colors.grey, fontSize: 16),
               ),
             ),
             theme: ThemeData(
@@ -55,7 +60,7 @@ class MyApp extends StatelessWidget {
               useMaterial3: true,
               textTheme: TextTheme(
                 bodyMedium: TextStyle(
-                  color: darkDynamic == null ? Colors.black87 : Colors.white60,
+                  color: darkDynamic == null ? Colors.black : Colors.grey,
                   fontSize: 16,
                 ),
               ),
