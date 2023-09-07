@@ -1,8 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
 
 import 'api_routes.dart';
-import 'pretty_dio_logger.dart';
 
 class ApiBaseClient {
   static final BaseOptions _opts = BaseOptions(
@@ -15,7 +13,7 @@ class ApiBaseClient {
   }
 
   static Dio _addInterceptors(Dio dio) {
-    if (kDebugMode && !kIsWeb) {
+    /*if (kDebugMode && !kIsWeb) {
       dio.interceptors.add(
         PrettyDioLogger(
           requestHeader: true,
@@ -25,7 +23,7 @@ class ApiBaseClient {
           compact: true,
         ),
       );
-    }
+    }*/
     return dio;
   }
 

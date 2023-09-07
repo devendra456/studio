@@ -1,9 +1,7 @@
-import 'dart:convert';
-
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
-import 'package:pasteboard/pasteboard.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:studio/application/core/show_message.dart';
 import 'package:studio/presentation/on_boarding/views/studio_grid_tile.dart';
@@ -52,20 +50,21 @@ class ImageViewerScreen extends StatelessWidget {
                   ShowMessage.show(context, "Copied to Clipboard");
                 },
               ),
-              PopupMenuItem(
-                child: ListTile(
-                  leading: const Icon(Icons.share_rounded),
-                  title: Text(
-                    "Share File",
-                    style: Theme.of(context).textTheme.bodyMedium,
+              if (!kIsWeb)
+                PopupMenuItem(
+                  child: ListTile(
+                    leading: const Icon(Icons.share_rounded),
+                    title: Text(
+                      "Share File",
+                      style: Theme.of(context).textTheme.bodyMedium,
+                    ),
                   ),
+                  onTap: () async {
+                    var file = await defaultCacheManager.getSingleFile(url);
+                    Share.shareXFiles([XFile(file.path)]);
+                  },
                 ),
-                onTap: () async {
-                  var file = await defaultCacheManager.getSingleFile(url);
-                  Share.shareXFiles([XFile(file.path)]);
-                },
-              ),
-              PopupMenuItem(
+              /*PopupMenuItem(
                 child: ListTile(
                   leading: const Icon(Icons.file_copy_rounded),
                   title: Text(
@@ -93,7 +92,7 @@ class ImageViewerScreen extends StatelessWidget {
                 onTap: () {
                   defaultCacheManager.getSingleFile(url);
                 },
-              ),
+              ),*/
             ];
           }),
         ],

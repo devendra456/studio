@@ -52,7 +52,7 @@ class _SettingScreenState extends State<SettingScreen> {
               value: blurValue,
               onChanged: onBlurSliderChange,
               min: 1,
-              max: 10,
+              max: 9,
             ),
           CheckboxListTile(
             value: greyScale,

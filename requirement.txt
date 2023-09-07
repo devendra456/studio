@@ -4,7 +4,9 @@
 #web
 #ios
 #windows
-#linex
+#linux
 #macos
 #UI&UX
 #Local manage
+#image editor
+#change grayscale, height, width, and blur of a particular image
