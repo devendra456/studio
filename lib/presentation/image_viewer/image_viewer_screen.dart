@@ -4,17 +4,18 @@ import 'package:flutter/services.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:studio/application/core/show_message.dart';
+import 'package:studio/domain/entities/image_entity.dart';
 import 'package:studio/presentation/on_boarding/views/studio_grid_tile.dart';
 
 class ImageViewerScreen extends StatelessWidget {
   const ImageViewerScreen({
     super.key,
-    required this.url,
+    required this.imageEntity,
     required this.defaultCacheManager,
   });
 
   final DefaultCacheManager defaultCacheManager;
-  final String url;
+  final PageImageData imageEntity;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,14 @@ class ImageViewerScreen extends StatelessWidget {
             return [
               PopupMenuItem(
                 onTap: () {
-                  Share.share(url, subject: url);
+                  switch (imageEntity.imageType) {
+                    case ImageType.local:
+                    case ImageType.remote:
+                      Share.share(
+                        imageEntity.url,
+                        subject: imageEntity.url,
+                      );
+                  }
                 },
                 child: ListTile(
                   leading: const Icon(Icons.link_rounded),
@@ -44,10 +52,14 @@ class ImageViewerScreen extends StatelessWidget {
                   ),
                 ),
                 onTap: () {
-                  Clipboard.setData(
-                    ClipboardData(text: url),
-                  );
-                  ShowMessage.show(context, "Copied to Clipboard");
+                  switch (imageEntity.imageType) {
+                    case ImageType.local:
+                    case ImageType.remote:
+                      Clipboard.setData(
+                        ClipboardData(text: imageEntity.url),
+                      );
+                      ShowMessage.show(context, "Copied to Clipboard");
+                  }
                 },
               ),
               if (!kIsWeb)
@@ -60,8 +72,14 @@ class ImageViewerScreen extends StatelessWidget {
                     ),
                   ),
                   onTap: () async {
-                    var file = await defaultCacheManager.getSingleFile(url);
-                    Share.shareXFiles([XFile(file.path)]);
+                    switch (imageEntity.imageType) {
+                      case ImageType.local:
+                        Share.shareXFiles([XFile(imageEntity.url)]);
+                      case ImageType.remote:
+                        var file = await defaultCacheManager
+                            .getSingleFile(imageEntity.url);
+                        Share.shareXFiles([XFile(file.path)]);
+                    }
                   },
                 ),
               /*PopupMenuItem(
@@ -100,9 +118,9 @@ class ImageViewerScreen extends StatelessWidget {
       body: InteractiveViewer(
         child: Center(
           child: Hero(
-            tag: url,
+            tag: imageEntity.url,
             child: StudioImageTile(
-              url: url,
+              imageEntity: imageEntity,
             ),
           ),
         ),

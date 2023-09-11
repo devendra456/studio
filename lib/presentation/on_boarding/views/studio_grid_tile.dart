@@ -1,25 +1,33 @@
-import 'package:cached_network_image/cached_network_image.dart';
+import 'dart:io';
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:studio/domain/entities/image_entity.dart';
 
 class StudioImageTile extends StatelessWidget {
-  final String url;
+  final PageImageData imageEntity;
 
   const StudioImageTile({
     super.key,
-    required this.url,
+    required this.imageEntity,
   });
 
   @override
   Widget build(BuildContext context) {
-    return CachedNetworkImage(
-      imageUrl: url,
-      placeholder: (context, _) {
-        return const Icon(
-          Icons.image_outlined,
-          color: Colors.grey,
+    switch (imageEntity.imageType) {
+      case ImageType.local:
+        final file = File(imageEntity.url);
+        return Image.file(file);
+      case ImageType.remote:
+        return CachedNetworkImage(
+          imageUrl: imageEntity.url,
+          placeholder: (context, _) {
+            return const Icon(
+              Icons.image_outlined,
+              color: Colors.grey,
+            );
+          },
         );
-      },
-    );
+    }
   }
 }

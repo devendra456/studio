@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
+import 'package:studio/domain/entities/image_entity.dart';
 import 'package:studio/presentation/on_boarding/views/studio_grid_tile.dart';
 
 import '../../../application/routes/route_names.dart';
@@ -33,7 +34,7 @@ class OnBoardingScreen extends StatelessWidget {
           body: PagedGridView(
             pagingController: bloc.pagingController,
             padding: const EdgeInsets.all(16),
-            builderDelegate: PagedChildBuilderDelegate<String>(
+            builderDelegate: PagedChildBuilderDelegate<PageImageData>(
               itemBuilder: (context, item, index) {
                 return InkWell(
                   onTap: () {
@@ -41,9 +42,9 @@ class OnBoardingScreen extends StatelessWidget {
                         arguments: item);
                   },
                   child: Hero(
-                    tag: item,
+                    tag: item.url,
                     child: StudioImageTile(
-                      url: item,
+                      imageEntity: item,
                     ),
                   ),
                 );

@@ -1,41 +1,38 @@
-import 'dart:developer';
-
 import 'package:dartz/dartz.dart';
-import 'package:studio/application/constants.dart';
-import 'package:studio/application/core/error_handler.dart';
-import 'package:studio/application/network/api_base_client.dart';
-import 'package:studio/application/network/api_routes.dart';
+import 'package:studio/application/network/network_info.dart';
+import 'package:studio/data/data_source/on_boarding_local_data_source.dart';
+import 'package:studio/data/data_source/on_boarding_remote_data_source.dart';
+import 'package:studio/domain/entities/image_entity.dart';
 
 import '../../application/core/failure.dart';
 import '../../domain/repos/on_boarding_repos.dart';
 import '../../domain/use_cases/load_images_use_case.dart';
 
 class OnBoardingReposImpl implements OnBoardingRepos {
+  final OnBoardingRemoteDataSource onBoardingRemoteDataSource;
+  final OnBoardingLocalDataSource onBoardingLocalDataSource;
+  final NetworkInfo networkInfo;
+
+  OnBoardingReposImpl({
+    required this.onBoardingRemoteDataSource,
+    required this.onBoardingLocalDataSource,
+    required this.networkInfo,
+  });
+
   @override
-  Future<Either<Failure, List<String>>> getImages(
+  Future<Either<Failure, ImageEntity>> getImages(
       LoadImagesParams params) async {
-    try {
-      final List<String> list = [];
-      String urlEndPoint = "/${params.width}/${params.height}?";
-      if (params.grayScale == true) {
-        urlEndPoint += "grayscale&";
-      }
-      int? blur = params.blur;
-      if (blur != null) {
-        if (blur > 0) {
-          urlEndPoint += "blur=$blur";
-        }
-      }
-      for (int i = 0; i < kLoadItemPerPage; i++) {
-        final res = await ApiBaseClient.client.get(urlEndPoint);
-        final url =
-            "${APIRoutes.baseURL}/id/${res.headers.map["picsum-id"]?[0]}$urlEndPoint";
-        log(url);
-        list.add(url);
-      }
-      return Right(list);
-    } catch (e) {
-      return Left(ErrorHandler.handle(e).failure);
+    final isConnected = await networkInfo.isConnected();
+    if (isConnected) {
+      final res = await onBoardingRemoteDataSource.loadRemoteImages(params);
+      return res.fold((l) => Left(l), (r) {
+        return Right(ImageEntity(url: r,imageType: ImageType.remote));
+      });
+    } else {
+      final res = await onBoardingLocalDataSource.loadLocalImages();
+      return res.fold((l) => Left(l), (r) {
+        return Right(ImageEntity(url: r,imageType: ImageType.local));
+      });
     }
   }
 }

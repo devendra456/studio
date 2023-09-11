@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:studio/application/preferences/app_preferences.dart';
+import 'package:studio/domain/entities/image_entity.dart';
 import 'package:studio/domain/use_cases/load_images_use_case.dart';
 import 'package:studio/firebase_options.dart';
 import 'package:studio/presentation/on_boarding/bloc/on_boarding_bloc.dart';
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) {
             final bloc = OnBoardingBloc(
-                getIt.get<LoadImagesUseCase>(), getIt.get<AppPreferences>());
+                getIt.get<LoadImagesUseCase>(), getIt.get<AppPreferences>(),getIt());
             return bloc;
           },
         )
@@ -72,10 +73,10 @@ class MyApp extends StatelessWidget {
             routes: {
               Navigator.defaultRouteName: (context) => const OnBoardingScreen(),
               RouteName.imageViewer: (context) {
-                final String url =
-                    ModalRoute.of(context)?.settings.arguments as String;
+                final PageImageData url =
+                    ModalRoute.of(context)?.settings.arguments as PageImageData;
                 return ImageViewerScreen(
-                  url: url,
+                  imageEntity: url,
                   defaultCacheManager: getIt.get<DefaultCacheManager>(),
                 );
               },
