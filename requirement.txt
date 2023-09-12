@@ -1,7 +1,6 @@
 #copy image
 #download image
 #ios
-#windows
 #linux
 #macos
 #image editor

@@ -18,17 +18,17 @@ class NetworkInfoImpl implements NetworkInfo {
     final result = await connectivity.checkConnectivity();
     switch (result) {
       case ConnectivityResult.bluetooth:
-        return false;
+        return true;
       case ConnectivityResult.wifi:
         return true;
       case ConnectivityResult.ethernet:
-        return false;
+        return true;
       case ConnectivityResult.mobile:
         return true;
       case ConnectivityResult.none:
         return false;
       case ConnectivityResult.vpn:
-        return false;
+        return true;
       case ConnectivityResult.other:
         return false;
     }

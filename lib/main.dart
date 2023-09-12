@@ -1,5 +1,6 @@
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
@@ -17,9 +18,25 @@ import 'presentation/settings/setting_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  if (kIsWeb) {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+  }
+  switch (defaultTargetPlatform) {
+    case TargetPlatform.android:
+      await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform,
+      );
+    case TargetPlatform.fuchsia:
+    case TargetPlatform.iOS:
+      await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform,
+      );
+    case TargetPlatform.linux:
+    case TargetPlatform.macOS:
+    case TargetPlatform.windows:
+  }
   await setUpDi();
   runApp(const MyApp());
 }
@@ -33,8 +50,8 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) {
-            final bloc = OnBoardingBloc(
-                getIt.get<LoadImagesUseCase>(), getIt.get<AppPreferences>(),getIt());
+            final bloc = OnBoardingBloc(getIt.get<LoadImagesUseCase>(),
+                getIt.get<AppPreferences>(), getIt());
             return bloc;
           },
         )
