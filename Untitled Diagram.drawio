@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-06-30T13:18:02.760Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" etag="yu2o2lF-bDVaaxJi5jWg" version="24.6.4" type="github">
+<mxfile host="app.diagrams.net" modified="2024-06-30T13:22:50.322Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" etag="Ot8pAN2sx3IG0TMN-IGs" version="24.6.4" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="993" dy="1785" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="512" dy="1487" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -36,6 +36,12 @@
         </mxCell>
         <mxCell id="dUu9gQEKXUH--pIyy-Z--13" value="&lt;ol&gt;&lt;li&gt;Authentication&lt;/li&gt;&lt;li&gt;Profile&lt;/li&gt;&lt;li&gt;Discover&lt;/li&gt;&lt;li&gt;Notification&lt;/li&gt;&lt;li&gt;Messaing&lt;/li&gt;&lt;li&gt;Seetings&lt;/li&gt;&lt;li&gt;Home&lt;/li&gt;&lt;/ol&gt;" style="text;strokeColor=none;fillColor=none;html=1;whiteSpace=wrap;verticalAlign=middle;overflow=hidden;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="25" y="460" width="200" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="dUu9gQEKXUH--pIyy-Z--16" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Authentication&lt;/h1&gt;&lt;p&gt;1. Anonimous User&lt;/p&gt;&lt;p&gt;2. Login with Mobile&lt;/p&gt;&lt;p&gt;3. Login with Google&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="340" y="460" width="290" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="dUu9gQEKXUH--pIyy-Z--17" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Profile&lt;/span&gt;&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;font-size: 12px; font-weight: 400;&quot;&gt;1. Update Profile&lt;/span&gt;&lt;/h1&gt;&lt;div&gt;&lt;span style=&quot;font-size: 12px; font-weight: 400;&quot;&gt;2. Change Mobile number&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 12px; font-weight: 400;&quot;&gt;3. update profile pics.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 12px; font-weight: 400;&quot;&gt;4. Verify Mobile number.&lt;/span&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="45" y="660" width="375" height="270" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
