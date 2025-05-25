@@ -102,5 +102,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Acknowledgments
 
 - [Lorem Picsum](https://picsum.photos) for providing the image API
-- Flutter team for the amazing framework
+- [Flutter](https://flutter.dev/) team for the amazing framework
 - All the package authors that made this project possible
