@@ -3,6 +3,9 @@ import 'package:dio/dio.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:studio/application/auth/auth_service.dart';
+import 'package:studio/application/download/download_service.dart';
+import 'package:studio/application/favorites/favorites_service.dart';
 import 'package:studio/application/network/network_info.dart';
 import 'package:studio/application/preferences/app_preferences_impl.dart';
 import 'package:studio/data/data_source/on_boarding_local_data_source.dart';
@@ -32,4 +35,16 @@ Future<void> setUpDi() async {
   getIt.registerFactory<DefaultCacheManager>(() => DefaultCacheManager());
   getIt.registerFactory<LoadImagesUseCase>(
       () => LoadImagesUseCase(onBoardingRepos));
+  
+  // Register AuthService as a singleton
+  getIt.registerLazySingleton<AuthService>(() => AuthService());
+  
+  // Register FavoritesService as a singleton
+  getIt.registerLazySingleton<FavoritesService>(() => FavoritesService());
+  
+  // Register DownloadService as a singleton
+  getIt.registerLazySingleton<DownloadService>(() => DownloadService(
+    cacheManager: getIt.get<DefaultCacheManager>(),
+    dio: getIt.get<Dio>(),
+  ));
 }

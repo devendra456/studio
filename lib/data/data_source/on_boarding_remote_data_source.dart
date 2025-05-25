@@ -39,6 +39,7 @@ class OnBoardingRemoteDataSourceImpl implements OnBoardingRemoteDataSource {
       }
       return Right(list);
     } catch (e) {
+      print(e);
       return Left(ErrorHandler.handle(e).failure);
     }
   }

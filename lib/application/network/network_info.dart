@@ -5,7 +5,7 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 abstract class NetworkInfo {
   Future<bool> isConnected();
 
-  Stream<ConnectivityResult> connectivitySubscription();
+  Stream<List<ConnectivityResult>> connectivitySubscription();
 }
 
 class NetworkInfoImpl implements NetworkInfo {
@@ -16,26 +16,13 @@ class NetworkInfoImpl implements NetworkInfo {
   @override
   Future<bool> isConnected() async {
     final result = await connectivity.checkConnectivity();
-    switch (result) {
-      case ConnectivityResult.bluetooth:
-        return true;
-      case ConnectivityResult.wifi:
-        return true;
-      case ConnectivityResult.ethernet:
-        return true;
-      case ConnectivityResult.mobile:
-        return true;
-      case ConnectivityResult.none:
-        return false;
-      case ConnectivityResult.vpn:
-        return true;
-      case ConnectivityResult.other:
-        return false;
-    }
+    return result.contains(ConnectivityResult.mobile) ||
+        result.contains(ConnectivityResult.wifi) ||
+        result.contains(ConnectivityResult.ethernet);
   }
 
   @override
-  Stream<ConnectivityResult> connectivitySubscription() {
+  Stream<List<ConnectivityResult>> connectivitySubscription() {
     return connectivity.onConnectivityChanged;
   }
 }

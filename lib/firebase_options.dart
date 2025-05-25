@@ -27,10 +27,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.macOS:
         return macos;
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -49,7 +46,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '946778946960',
     projectId: 'a2z-studio',
     authDomain: 'a2z-studio.firebaseapp.com',
-    storageBucket: 'a2z-studio.appspot.com',
+    storageBucket: 'a2z-studio.firebasestorage.app',
     measurementId: 'G-61Q7EELD8T',
   );
 
@@ -58,7 +55,7 @@ class DefaultFirebaseOptions {
     appId: '1:946778946960:android:fa6636c4e6f65c5df6c715',
     messagingSenderId: '946778946960',
     projectId: 'a2z-studio',
-    storageBucket: 'a2z-studio.appspot.com',
+    storageBucket: 'a2z-studio.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
@@ -66,18 +63,27 @@ class DefaultFirebaseOptions {
     appId: '1:946778946960:ios:f47bf8e40f7a14a2f6c715',
     messagingSenderId: '946778946960',
     projectId: 'a2z-studio',
-    storageBucket: 'a2z-studio.appspot.com',
-    iosClientId: '946778946960-cf4a91kten78b1nhrqfbtb2b1kreo95a.apps.googleusercontent.com',
+    storageBucket: 'a2z-studio.firebasestorage.app',
     iosBundleId: 'com.studio.studio',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyBeCYwWyR3rS4cH7ilFMZFMIP3xG1iHrbE',
-    appId: '1:946778946960:ios:96a6ac45b0389fd4f6c715',
+    appId: '1:946778946960:ios:f47bf8e40f7a14a2f6c715',
     messagingSenderId: '946778946960',
     projectId: 'a2z-studio',
-    storageBucket: 'a2z-studio.appspot.com',
-    iosClientId: '946778946960-qvtnn8ntd60bhrh6fja32sqgav0ci57r.apps.googleusercontent.com',
-    iosBundleId: 'com.studio.studio.RunnerTests',
+    storageBucket: 'a2z-studio.firebasestorage.app',
+    iosBundleId: 'com.studio.studio',
   );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyA6qn5biaWFDINj14oqG0csoZMNY5EkZJ0',
+    appId: '1:946778946960:web:cff92e271d505f42f6c715',
+    messagingSenderId: '946778946960',
+    projectId: 'a2z-studio',
+    authDomain: 'a2z-studio.firebaseapp.com',
+    storageBucket: 'a2z-studio.firebasestorage.app',
+    measurementId: 'G-5YN4E2CLQR',
+  );
+
 }

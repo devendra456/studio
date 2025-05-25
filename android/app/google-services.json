@@ -2,7 +2,7 @@
   "project_info": {
     "project_number": "946778946960",
     "project_id": "a2z-studio",
-    "storage_bucket": "a2z-studio.appspot.com"
+    "storage_bucket": "a2z-studio.firebasestorage.app"
   },
   "client": [
     {
@@ -14,7 +14,7 @@
       },
       "oauth_client": [
         {
-          "client_id": "946778946960-026bipuif13qsjmc9lkd5001163gge0m.apps.googleusercontent.com",
+          "client_id": "946778946960-99f6lgm6tkmc7q3i6nrod708o7jbhrvl.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -27,7 +27,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "946778946960-026bipuif13qsjmc9lkd5001163gge0m.apps.googleusercontent.com",
+              "client_id": "946778946960-99f6lgm6tkmc7q3i6nrod708o7jbhrvl.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
