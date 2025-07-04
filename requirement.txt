@@ -1,0 +1,7 @@
+#copy image
+#download image
+#ios
+#linux
+#macos
+#image editor
+#change grayscale, height, width, and blur of a particular image

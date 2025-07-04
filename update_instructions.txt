@@ -1,0 +1,50 @@
+INSTRUCTIONS FOR UPDATING THE LITERATURE SURVEY SECTION
+
+Follow these steps to update the Literature Survey section in your chapters-report.docx file:
+
+1. BACKUP YOUR DOCUMENT
+   - Create a backup copy of your chapters-report.docx file before making any changes
+
+2. OPEN THE DOCUMENT
+   - Open chapters-report.docx in Microsoft Word or another compatible word processor
+
+3. LOCATE THE LITERATURE SURVEY SECTION
+   - Find the section titled "2. LITERATURE SURVEY"
+   - Select all content from this heading until the start of section 3
+
+4. REPLACE THE CONTENT
+   - Delete the selected content
+   - Open the file "literature_survey_content.txt" in a text editor
+   - Copy all the content from this file
+   - Paste it into your document where you deleted the old content
+   - Format the text to match the rest of your document:
+     * Section headings (2.1, 2.2, etc.) should use Heading 2 style
+     * Body text should use the same font and size as the rest of your document
+     * Ensure consistent spacing between paragraphs
+
+5. ADD SCREENSHOTS
+   - Refer to "screenshot_suggestions.txt" for recommended screenshots
+   - Take screenshots of your application as suggested
+   - Insert each screenshot after the relevant section
+   - Add captions as suggested in the screenshot suggestions file
+   - Size the images appropriately to fit within your document margins
+
+6. UPDATE REFERENCES
+   - Ensure all references mentioned in the Literature Survey are included in your References section
+   - Update the reference numbers if necessary to maintain sequential ordering
+
+7. SAVE THE DOCUMENT
+   - Save your updated document
+   - Review the changes to ensure everything looks correct
+
+8. CHECK FORMATTING
+   - Check that the formatting is consistent throughout the document
+   - Ensure page breaks don't disrupt the flow of content
+   - Verify that all images are properly positioned and captioned
+
+These files have been created to help you update your document:
+- literature_survey_content.txt: Contains the updated Literature Survey text
+- screenshot_suggestions.txt: Suggests screenshots to include and their captions
+- sample_screenshot_layout.txt: Provides a visual reference for screenshot composition
+
+If you need any clarification or assistance with these steps, please ask.

@@ -1,0 +1,8 @@
+2. Save image on cloud.
+4. Add image categorization and search functionality.
+5. Implement advanced image editing capabilities.
+6. Add collections/albums for organizing images.
+7. Add AI-powered image enhancement/generation.
+8. Create a marketplace for photographers.
+
+flutter build appbundle --release --obfuscate --split-debug-info=build/symbols/

@@ -1,0 +1,44 @@
+SAMPLE SCREENSHOT LAYOUT FOR LITERATURE SURVEY
+
++------------------------------------------+
+|                                          |
+|  A to Z Studio                      ⋮    |
+|                                          |
+|  +-------------+    +-------------+      |
+|  |             |    |             |      |
+|  |   Image 1   |    |   Image 2   |      |
+|  |             |    |             |      |
+|  +-------------+    +-------------+      |
+|                                          |
+|  +-------------+    +-------------+      |
+|  |             |    |             |      |
+|  |   Image 3   |    |   Image 4   |      |
+|  |             |    |             |      |
+|  +-------------+    +-------------+      |
+|                                          |
+|  +-------------+    +-------------+      |
+|  |             |    |             |      |
+|  |   Image 5   |    |   Image 6   |      |
+|  |             |    |             |      |
+|  +-------------+    +-------------+      |
+|                                          |
+|                                          |
+|  Home    Favorites    Settings           |
++------------------------------------------+
+
+Figure 2.1: A to Z Studio home screen displaying a grid of images from Lorem Picsum API
+
+This sample layout represents how the home screen of your application might look. When taking actual screenshots:
+
+1. Run your application on a device or emulator
+2. Navigate to each screen you want to capture
+3. Take screenshots using the device's screenshot functionality
+4. Transfer the screenshots to your computer
+5. Insert them into your document with appropriate captions
+
+For the Literature Survey section, focus on capturing screenshots that illustrate the technologies and concepts discussed in the text, such as:
+- Flutter UI components
+- Lorem Picsum image integration
+- Material Design 3 theming
+- Authentication interfaces
+- Local storage features

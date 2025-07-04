@@ -1,0 +1,50 @@
+RECOMMENDED SCREENSHOTS FOR LITERATURE SURVEY
+
+Based on the analysis of your "A to Z Studio" Flutter application, the following screenshots would enhance your Literature Survey section:
+
+1. Home Screen / Image Grid
+   - Shows the main interface with a grid of images from Lorem Picsum
+   - Demonstrates the UI layout and responsive design
+   - Caption: "Figure 2.1: A to Z Studio home screen displaying a grid of images from Lorem Picsum API"
+
+2. Image Detail View
+   - Shows a selected image in full-screen mode with options
+   - Demonstrates the image viewing capabilities
+   - Caption: "Figure 2.2: Detailed view of a selected image with download and sharing options"
+
+3. Image Filtering Interface
+   - Shows the UI for applying grayscale and blur effects
+   - Demonstrates the image processing capabilities
+   - Caption: "Figure 2.3: Image filtering options including grayscale and blur effects"
+
+4. Authentication Screen
+   - Shows the login interface with Google and Facebook options
+   - Demonstrates the Firebase Authentication integration
+   - Caption: "Figure 2.4: Authentication screen with social login options using Firebase"
+
+5. Favorites Screen
+   - Shows the user's saved favorite images
+   - Demonstrates the local storage functionality
+   - Caption: "Figure 2.5: Favorites screen showing locally stored images"
+
+6. Settings Screen with Theme Options
+   - Shows the settings interface with theme selection
+   - Demonstrates the Material Design 3 and dynamic color implementation
+   - Caption: "Figure 2.6: Settings screen showcasing Material Design 3 theming options"
+
+7. Offline Mode
+   - Shows the app functioning without internet connection
+   - Demonstrates the offline capabilities
+   - Caption: "Figure 2.7: A to Z Studio functioning in offline mode with cached images"
+
+8. Cross-Platform Comparison
+   - Shows the app running on both Android and iOS devices side by side
+   - Demonstrates the cross-platform consistency
+   - Caption: "Figure 2.8: Comparison of A to Z Studio running on Android (left) and iOS (right) platforms"
+
+INSTRUCTIONS FOR ADDING SCREENSHOTS:
+1. Take screenshots of your application running on a device or emulator
+2. Crop and resize images to fit appropriately in your document
+3. Insert each screenshot after the relevant section in the Literature Survey
+4. Add the suggested captions beneath each screenshot
+5. Ensure all screenshots are clear and demonstrate the key features discussed in the text

@@ -1,0 +1,49 @@
+<mxfile host="app.diagrams.net" modified="2024-06-30T13:22:50.322Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" etag="Ot8pAN2sx3IG0TMN-IGs" version="24.6.4" type="github">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel dx="512" dy="1487" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="dUu9gQEKXUH--pIyy-Z--0" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="60" y="70" width="130" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="dUu9gQEKXUH--pIyy-Z--2" value="Mate Mobile App" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="92" y="210" width="65" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="dUu9gQEKXUH--pIyy-Z--3" value="" style="shape=datastore;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="580" y="80" width="190" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="dUu9gQEKXUH--pIyy-Z--4" value="" style="shape=doubleArrow;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="210" y="190" width="360" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="dUu9gQEKXUH--pIyy-Z--5" value="Firebase" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="645" y="230" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="dUu9gQEKXUH--pIyy-Z--6" value="" style="shape=stencil(fZbdcgIhDIWfZm8zQAg/17Z9j85U606tdqz9e/tmZ0c0uJ47xP0I5JwEBl59bp8/1kNwn6fj4W39M76ctgM/DCGM++36OJ50NPDjwKvN4bh+PR6+9i/z74/n6ctp9H74nlb4nbmSKZeJCu5vngmZ6jzzNAO7cX8FVKEsBuBKrgKg9oAE8gkCbLeUhEoEQKSUDZDLeWYRKIl8MEDRmHwfyBrBG6Amyu4+kDxxMoB3jhwgYu7TVAsVkFcWCs4CTBEoF4RctKeOxHIf8IXYpikHikAIf+MNUW94AGSSaoAoFIE3AlOyeWU+p2E5S9yfQZcQILVuQOwZdJNoS9Ls3wA5u2XZTIHECqeJ9kDpSaauRiNVcAY1QhdBzeLBli5WazpkSsBLV25uRaqWRyFawTQzRRIQYirJzq5atkBqLfouwqUxLBepthWb10vrWZY6UOAeyKCCtDV625mm9gmUC4Wc3VLJMMIE1BsA2FW9JraVlQB7n3c9oMKhCLEvIM1zBPZ25/umNQ1tVEC2G+fFCC8g398O2hNQuQlVu752DBfA+q0ptnqO5JFmeuIuo9DY7KjY71UxdJV4EntifPWorW++R/dC4t7V3DlIB5cHx2bc7eb3yvX//QNFp+bHDT/+Aw==);lineShape=1;strokeColor=default;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="1001.8206088471147" y="278.3188054110858" width="8.495526858391713" height="8.482247666104906" as="geometry" />
+        </mxCell>
+        <mxCell id="dUu9gQEKXUH--pIyy-Z--7" value="" style="shape=stencil(fZbdcgIhDIWfZm8zQAg/17Z9j85U606tdqz9e/tmZ0c0uJ47xP0I5JwEBl59bp8/1kNwn6fj4W39M76ctgM/DCGM++36OJ50NPDjwKvN4bh+PR6+9i/z74/n6ctp9H74nlb4nbmSKZeJCu5vngmZ6jzzNAO7cX8FVKEsBuBKrgKg9oAE8gkCbLeUhEoEQKSUDZDLeWYRKIl8MEDRmHwfyBrBG6Amyu4+kDxxMoB3jhwgYu7TVAsVkFcWCs4CTBEoF4RctKeOxHIf8IXYpikHikAIf+MNUW94AGSSaoAoFIE3AlOyeWU+p2E5S9yfQZcQILVuQOwZdJNoS9Ls3wA5u2XZTIHECqeJ9kDpSaauRiNVcAY1QhdBzeLBli5WazpkSsBLV25uRaqWRyFawTQzRRIQYirJzq5atkBqLfouwqUxLBepthWb10vrWZY6UOAeyKCCtDV625mm9gmUC4Wc3VLJMMIE1BsA2FW9JraVlQB7n3c9oMKhCLEvIM1zBPZ25/umNQ1tVEC2G+fFCC8g398O2hNQuQlVu752DBfA+q0ptnqO5JFmeuIuo9DY7KjY71UxdJV4EntifPWorW++R/dC4t7V3DlIB5cHx2bc7eb3yvX//QNFp+bHDT/+Aw==);lineShape=1;strokeColor=default;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="735.1539051894442" y="-67.13576778671234" width="8.495526858391713" height="8.482247666104595" as="geometry" />
+        </mxCell>
+        <mxCell id="dUu9gQEKXUH--pIyy-Z--12" value="" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="dUu9gQEKXUH--pIyy-Z--11" target="dUu9gQEKXUH--pIyy-Z--3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dUu9gQEKXUH--pIyy-Z--11" value="&lt;ol&gt;&lt;li&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Authentication&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Firebase DataBase&lt;/span&gt;&lt;/li&gt;&lt;li&gt;Storage&lt;/li&gt;&lt;li&gt;Firestore&lt;/li&gt;&lt;li&gt;Analitics&lt;/li&gt;&lt;li&gt;Messaging&lt;/li&gt;&lt;/ol&gt;" style="text;strokeColor=none;fillColor=none;html=1;whiteSpace=wrap;verticalAlign=middle;overflow=hidden;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="870" y="180" width="220" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="dUu9gQEKXUH--pIyy-Z--14" value="" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="dUu9gQEKXUH--pIyy-Z--13" target="dUu9gQEKXUH--pIyy-Z--0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dUu9gQEKXUH--pIyy-Z--13" value="&lt;ol&gt;&lt;li&gt;Authentication&lt;/li&gt;&lt;li&gt;Profile&lt;/li&gt;&lt;li&gt;Discover&lt;/li&gt;&lt;li&gt;Notification&lt;/li&gt;&lt;li&gt;Messaing&lt;/li&gt;&lt;li&gt;Seetings&lt;/li&gt;&lt;li&gt;Home&lt;/li&gt;&lt;/ol&gt;" style="text;strokeColor=none;fillColor=none;html=1;whiteSpace=wrap;verticalAlign=middle;overflow=hidden;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="25" y="460" width="200" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="dUu9gQEKXUH--pIyy-Z--16" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Authentication&lt;/h1&gt;&lt;p&gt;1. Anonimous User&lt;/p&gt;&lt;p&gt;2. Login with Mobile&lt;/p&gt;&lt;p&gt;3. Login with Google&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="340" y="460" width="290" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="dUu9gQEKXUH--pIyy-Z--17" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Profile&lt;/span&gt;&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;font-size: 12px; font-weight: 400;&quot;&gt;1. Update Profile&lt;/span&gt;&lt;/h1&gt;&lt;div&gt;&lt;span style=&quot;font-size: 12px; font-weight: 400;&quot;&gt;2. Change Mobile number&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 12px; font-weight: 400;&quot;&gt;3. update profile pics.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 12px; font-weight: 400;&quot;&gt;4. Verify Mobile number.&lt;/span&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="45" y="660" width="375" height="270" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
